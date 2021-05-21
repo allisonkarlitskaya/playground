@@ -10,7 +10,12 @@ jobs:
     timeout-minutes: 5
     env:
       GIT_DIR: git-dir.git
+      DEBUG: ${{ toJSON(github) }}
+
     steps:
+      - name: Debug
+        run: printf "%s\n" "${DEBUG}"
+
       - name: Clear .github-changes label
         if: ${{ !endsWith(github.event.action, 'labeled') }}
         uses: actions/github-script@v3
