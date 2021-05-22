@@ -1,0 +1,13 @@
+name: pr
+on:
+  pull_request:
+    paths:
+      - abc
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Hello World
+        run: echo 'Hello World'

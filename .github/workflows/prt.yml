@@ -1,0 +1,13 @@
+name: prt
+on:
+  pull_request_target:
+    paths:
+      - abc
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Hello World
+        run: echo 'Hello World'
